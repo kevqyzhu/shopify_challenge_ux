@@ -33,7 +33,9 @@ class ResultsBox extends Component {
                         <ListGroup variant="flush">
                             <ListGroup.Item as="li" className='searchResults' key={idx}>
                                 {d.Title} ({d.Year}) 
-                                <Button variant="outline-secondary" size="sm" style={{float: 'right'}} disabled={ this.checkId(d.imdbID) } onClick = { (e) => { e.preventDefault(); this.props.nominate(this.props.results[idx]); } }>Nominate</Button>
+                                <Button variant="outline-secondary" size="sm" style={{float: 'right'}} 
+                                disabled={ this.checkId(d.imdbID) || this.props.nominations.length === 5 } 
+                                onClick = { (e) => { e.preventDefault(); this.props.nominate(this.props.results[idx]); } }>Nominate</Button>
                             </ListGroup.Item>
                         </ListGroup>
                         )

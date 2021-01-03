@@ -2,7 +2,7 @@ import React from 'react'
 import SearchBar from './components/SearchBar/SearchBar'
 import ResultsBox from './components/Results/ResultsBox'
 import Nominations from './components/Nominations/Nominations';
-import { Jumbotron, Col, Container, Row } from "react-bootstrap";
+import { Jumbotron, Col, Container, Row, Alert } from "react-bootstrap";
 
 class App extends React.Component {
   constructor() {
@@ -46,9 +46,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Jumbotron fluid>
+      <Jumbotron fluid >
         <Container fluid="md"> 
           <h1>The Shoppies!</h1>
+          {this.state.nominations.length === 5 ?(
+            <Alert variant = 'success' >You have completed your nominations!</Alert>) : (
+              <Alert variant = 'primary'>Please nominate 5 movies</Alert>
+            )
+          }
           <Row>
             <Col>
             <SearchBar placeholder="Enter movie info..." handleChange={(e) => this.setState({searchField:e.target.value})} clickResponse = { (e) => { e.preventDefault(); this.fetchData(); } }/>
