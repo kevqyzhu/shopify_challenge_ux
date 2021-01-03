@@ -17,9 +17,15 @@ class Nominations extends Component {
               this.props.nominations.map(function(d, idx){
                 return (
                 <ListGroup variant="flush">
-                  <ListGroup.Item as="li" className='nominations' key={idx}>
+                  <ListGroup.Item as="li" 
+                  className='nominations' 
+                  key={idx}>
                       {d.Title} ({d.Year}) 
-                      <Button variant="outline-danger" size="sm" style={{float: 'right'}} onClick = { (e) => { e.preventDefault(); this.props.deleteNomination(idx); } }>Delete</Button>
+                      <Button 
+                      variant="outline-danger" 
+                      size="sm" style={{float: 'right'}} 
+                      onClick = { (e) => { e.preventDefault(); this.props.deleteNomination(idx); } }>
+                        Delete</Button>
                   </ListGroup.Item>
                 </ListGroup>
                 )

@@ -1,3 +1,6 @@
-.searchApp {
-  text-align: center;
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 70px;
 }
