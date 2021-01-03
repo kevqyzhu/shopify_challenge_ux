@@ -5,6 +5,7 @@ import Nominations from './components/Nominations/Nominations';
 import AlertBanner from './components/AlertBanner/AlertBanner';
 import './App.css';
 import { Col, Container, Row } from "react-bootstrap";
+import ShareableLink from './components/ShareableLink/ShareableLink';
 
 class App extends React.Component {
   constructor() {
@@ -48,8 +49,8 @@ class App extends React.Component {
 
   render() {
     return (
-
-        <Container className="page" fluid="md"> 
+      <div className="page" >
+        <Container fluid="md"> 
           <h1>The Shoppies!</h1>
           <AlertBanner nominations= {this.state.nominations}/>
           <Row>
@@ -57,6 +58,11 @@ class App extends React.Component {
             <SearchBar placeholder="Enter movie info..." 
             handleChange={(e) => this.setState({searchField:e.target.value})} 
             clickResponse = { (e) => { e.preventDefault(); this.fetchData(); } }/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            <ShareableLink/>
             </Col>
           </Row>
           <Row>
@@ -73,7 +79,7 @@ class App extends React.Component {
             </Col>
           </Row>
         </Container>
-
+      </div>
     );
   }
 }

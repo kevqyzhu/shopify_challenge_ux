@@ -17,6 +17,7 @@ class Nominations extends Component {
               this.props.nominations.map(function(d, idx){
                 return (
                 <ListGroup variant="flush">
+                  
                   <ListGroup.Item as="li" 
                   className='nominations' 
                   key={idx}>

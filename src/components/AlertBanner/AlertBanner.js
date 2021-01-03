@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, Fade} from "react-bootstrap";
 
 
-export default function AlertBanner(props) {
+const AlertBanner = (props) => {
     
     return(
         <>
@@ -19,8 +19,6 @@ export default function AlertBanner(props) {
     </>
     )
 
-
-
-
 }
 
+export default AlertBanner
